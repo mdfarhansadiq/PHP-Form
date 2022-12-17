@@ -12,12 +12,12 @@ session_start();
 
 <body>
     <?php
-        echo $_SESSION["useremail"];
-        $_SESSION["useremail"] = $_POST["useremail"];
-        $_SESSION["password"] = $_POST["password"];
-        if($_SESSION["useremail"] && $_SESSION["password"])
-        {
-            header("Location: http://localhost/WebPHP/another.php");
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $_SESSION["useremail"] = $_POST["useremail"];
+            $_SESSION["password"] = $_POST["password"];
+            if ($_SESSION["useremail"] && $_SESSION["password"]) {
+                header("Location: http://localhost/WebPHP/another.php");
+            }
         }
     ?>
     <div class="login-box">
