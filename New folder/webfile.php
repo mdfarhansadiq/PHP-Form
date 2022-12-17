@@ -12,8 +12,7 @@ session_start();
 
 <body>
     <?php
-        $_SESSION["useremail"] = "";
-        $_SESSION["password"] = "";
+        echo $_SESSION["useremail"];
         $_SESSION["useremail"] = $_POST["useremail"];
         $_SESSION["password"] = $_POST["password"];
         if($_SESSION["useremail"] && $_SESSION["password"])
@@ -35,7 +34,7 @@ session_start();
             <button type="submit">Submit</button>
         </form>
     </div>
-    
+
 </body>
 
 </html>
